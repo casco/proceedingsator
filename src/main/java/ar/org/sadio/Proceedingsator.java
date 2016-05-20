@@ -124,7 +124,7 @@ public class Proceedingsator {
     private void readArticleList() {
         Reader in = null;
         try {
-            in = new FileReader("example/input/articles.csv");
+            in = new FileReader(listFileName);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -1,9 +1,7 @@
 package ar.org.sadio;
 
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 
 public class HtmlPrinter {
 
@@ -13,7 +11,8 @@ public class HtmlPrinter {
 
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter(htmlFile));
+            writer = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(outputFilename), "UTF-8"));
             writer.write("<html>\n<body>\n");
             writer.write("\t<ul>\n");
             for (Article art : proceedings.getArticles()) {

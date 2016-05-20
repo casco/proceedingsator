@@ -70,12 +70,11 @@ public class Proceedings {
             e.printStackTrace();
         }
         for (CSVRecord record : records) {
-            String title = record.get("title");
-            String authors = record.get("authors");
-            String file = record.get("filename");
+            String title = record.get("titulo");
+            String authors = record.get("autores");
+            String file = record.get("documento");
             addArticle(new Article(title, authors, file, inputFolder));
         }
-        logger.info("Read " + getArticles().size() + " articles");
     }
 
     public void stampArticles(String outputFolder) throws IOException, DocumentException {
