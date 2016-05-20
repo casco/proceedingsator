@@ -37,6 +37,11 @@ public class Proceedingsator {
         } catch (DocumentException e) {
             e.printStackTrace();
         }
+        ator.generateHtml();
+    }
+
+    private void generateHtml() {
+        HtmlPrinter printer = new HtmlPrinter();
     }
 
     public String getInputFolder() {
