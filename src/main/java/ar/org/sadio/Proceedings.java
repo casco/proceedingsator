@@ -80,7 +80,8 @@ public class Proceedings {
 
     public void stampArticles(String outputFolder) throws IOException, DocumentException {
         for (Article article : articles) {
-            article.stamp(getConference(), getIssn(), getLastUsedPageNumber() + 1, outputFolder);
+            article.stamp(getConference(), getIssn(), getLastUsedPageNumber() + 1,
+                    outputFolder, getAcronym(), getSimposia());
             setLastUsedPageNumber(article.getEndPage());
         }
     }

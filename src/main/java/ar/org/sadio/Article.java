@@ -12,9 +12,6 @@ import com.itextpdf.text.pdf.PdfStamper;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import static ar.org.sadio.Proceedingsator.acronym;
-import static ar.org.sadio.Proceedingsator.simposia;
-
 /**
  * Created by alejandrofernandez on 5/19/16.
  */
@@ -82,7 +79,8 @@ public class Article {
         this.title = title;
     }
 
-    protected void stamp(String conference, String issn, int firstPage, String outputLocation) throws IOException, DocumentException {
+    protected void stamp(String conference, String issn, int firstPage, String outputLocation,
+                         String acronym, String simposia) throws IOException, DocumentException {
         PdfReader reader = new PdfReader(getLocation() + "/" + getFilename());
         PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(outputLocation + "/" + getFilename()));
         int pages = reader.getNumberOfPages();
