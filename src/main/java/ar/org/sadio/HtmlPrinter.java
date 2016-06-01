@@ -6,9 +6,6 @@ import java.io.*;
 public class HtmlPrinter {
 
     public void print(Proceedings proceedings, String outputFilename) {
-        File htmlFile = new File(outputFilename);
-        htmlFile.getParentFile().mkdirs();
-
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new OutputStreamWriter(

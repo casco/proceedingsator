@@ -98,6 +98,7 @@ public class Proceedingsator {
     private void proceed() {
         readArticleList();
         try {
+            prepareOutputFolder();
             stampArticles();
         } catch (IOException e) {
             e.printStackTrace();
@@ -105,6 +106,11 @@ public class Proceedingsator {
             e.printStackTrace();
         }
         generateHtml();
+    }
+
+    private void prepareOutputFolder() {
+        File htmlFile = new File(outputFolder);
+        htmlFile.mkdirs();
     }
 
     private void generateHtml() {
