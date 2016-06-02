@@ -2,6 +2,7 @@ package ar.org.sadio;
 
 import com.itextpdf.text.DocumentException;
 import org.apache.commons.cli.*;
+import org.apache.commons.io.FilenameUtils;
 
 import java.io.*;
 import java.util.logging.Logger;
@@ -47,7 +48,7 @@ public class Proceedingsator {
     private void configureFromCommandLine(String[] args) throws Exception {
         prepareCommandLineOptions();
         CommandLine line = parseCommandLineOptions(args);
-        if (! validateCommandLineOptions(line)) {
+        if (!validateCommandLineOptions(line)) {
             throw new Exception("Argumentos incompletos o inválidos");
         }
         inputFolder = line.getOptionValue("p");
@@ -126,15 +127,14 @@ public class Proceedingsator {
         proceedings.stampArticles(outputFolder);
     }
 
-
     private void readArticleList() {
-        Reader in = null;
-        try {
-            in = new FileReader(listFileName);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        if ("csv".equalsIgnoreCase(FilenameUtils.getExtension(listFileName))) {
+            new CsvArticleListReader(inputFolder, listFileName).readInto(proceedings);
+        } else if ("xls".equalsIgnoreCase(FilenameUtils.getExtension(listFileName))) {
+            new XlsArticleListReader(inputFolder, listFileName).readInto(proceedings);
         }
-        proceedings.readArticleList(in, inputFolder);
+
+
     }
 
 

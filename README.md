@@ -17,6 +17,9 @@ comillas para evitar inconvenientes. Vea el siguiente ejemplo:
     titulo,autores,documento
     "Regresión con SVM la matriz AHP.","Favret, F. E., Rodríguez, F. M., Labat, M. D.",asai1.pdf
     "Knowledge Representation of Intelligent Public.","Brys, C. R., Aldana-Montes, J. F.",asai2.pdf
+    
+Alternativamente (y para evitar los inconvenientes de preparar un archivo csv correctamente delimitado, puede 
+utilizar como entrada un archivo Excel 97/2004, con extensión xls. 
   
 Uso
 ---

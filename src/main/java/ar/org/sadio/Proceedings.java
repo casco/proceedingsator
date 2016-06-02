@@ -62,21 +62,6 @@ public class Proceedings {
         return articles;
     }
 
-    void readArticleList(Reader in, String inputFolder) {
-        Iterable<CSVRecord> records = null;
-        try {
-            records = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(in);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        for (CSVRecord record : records) {
-            String title = record.get("titulo");
-            String authors = record.get("autores");
-            String file = record.get("documento");
-            addArticle(new Article(title, authors, file, inputFolder));
-        }
-    }
-
     public void stampArticles(String outputFolder) throws IOException, DocumentException {
         for (Article article : articles) {
             article.stamp(getConference(), getIssn(), getLastUsedPageNumber() + 1,
