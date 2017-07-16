@@ -14,8 +14,7 @@ Dos versiones del jar serán generadas. Una de ella incluye todas las dependenci
 (```proceedingsator-X.Y-jar-with-dependencies.jar```). Cambie el nombre a ```proceedingsator.jar``` y ya estará listo para 
 comenzar. 
 
-Si lo prefiere, puede descargar la versión mas reciente, ya empaquetada, [desde este enlace](https://github.com/casco/proceedingsator/blob/master/proceesingsator.jar)
-
+Si lo prefiere, puede descargar la versión mas reciente, ya empaquetada, [desde este enlace](https://github.com/casco/proceedingsator/blob/master/proceedingsator.jar?raw=true)
 
 Preparación
 -----------
