@@ -4,6 +4,19 @@ Proceedingsator ayuda a compaginar los proceedings de los simposios de las JAIIO
 Toma información de los articulos y los pdfs originales. Agrega encabezado y pie de página a los pdfs y genera una
 pagina web básica que sirve de índice. 
 
+Instalación
+-----------
+Proceedingsator es una aplicación java, basada en Maven. Para construir la aplicación, simplemente ejecute:
+```
+mvn package
+```
+Dos versiones del jar serán generadas. Una de ella incluye todas las dependencias necesarias
+(```proceedingsator-X.Y-jar-with-dependencies.jar```). Cambie el nombre a ```proceedingsator.jar``` y ya estará listo para 
+comenzar. 
+
+Si lo prefiere, puede descargar la versión mas reciente, ya empaquetada, [desde este enlace](https://github.com/casco/proceedingsator/blob/master/proceesingsator.jar)
+
+
 Preparación
 -----------
 Prepare (en una carpeta/directorio) los pdf originales de los articulos a incluir en el proceeding. Proceedingsator 
@@ -29,7 +42,7 @@ Proceedingstator es un jar (Java) ejecutable. La estrategia general se uso es:
 
 Ejecutarlo sin parametros hará que imprima información de ayuda. Los parámetros disponibles son:
 
-     -a <arg>   acrónimo del  (p.e. SIA)
+     -a <arg>   acrónimo del simposio  (p.e. SIA)
      -c <arg>   nombre corto de la conferencia (p.e. 45JAIIO)
      -i <arg>   issn del simposio  (p.e. 2451-7585)
      -l <arg>   archivo CSV con el listado de articulos (p.e.
